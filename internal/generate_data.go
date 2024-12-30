@@ -38,8 +38,8 @@ func GenerateData() {
 
 		wr := csv.NewWriter(bufio.NewWriter(file))
 
-		for j := 0; j < 1000; j++ {
-			wr.Write([]string{fmt.Sprint(rand.Intn(999) + 1)})
+		for j := 0; j < 10000; j++ {
+			wr.Write([]string{fmt.Sprint(rand.Intn(999999) + 1)})
 		}
 		wr.Flush()
 	}
