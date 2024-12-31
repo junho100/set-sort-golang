@@ -6,18 +6,12 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"set-sort-golang/internal"
 	"sort"
 	"strconv"
 )
 
-func Solution() {
-	s := internal.NewSet()
-
-	entries, err := os.ReadDir("./test/")
-	if err != nil {
-		log.Fatal(err)
-	}
+func Solution(entries []os.DirEntry) {
+	s := NewSet()
 
 	for _, entry := range entries {
 		file, _ := os.Open(fmt.Sprintf("./test/%s", entry.Name()))

@@ -1,4 +1,4 @@
-package internal
+package case1
 
 type Set struct {
 	data map[int]struct{}
