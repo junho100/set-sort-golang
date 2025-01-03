@@ -11,7 +11,7 @@ import (
 	"sync"
 )
 
-func Solution(entries []os.DirEntry) {
+func Solution(entries []os.DirEntry) []int {
 	var wg sync.WaitGroup
 	s := NewSet()
 
@@ -46,5 +46,5 @@ func Solution(entries []os.DirEntry) {
 	wg.Wait()
 	sl := s.ToSlice()
 	sort.Ints(sl)
-	fmt.Println(sl)
+	return sl
 }

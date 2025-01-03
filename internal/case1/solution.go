@@ -10,7 +10,7 @@ import (
 	"strconv"
 )
 
-func Solution(entries []os.DirEntry) {
+func Solution(entries []os.DirEntry) []int {
 	s := NewSet()
 
 	for _, entry := range entries {
@@ -30,5 +30,5 @@ func Solution(entries []os.DirEntry) {
 
 	sl := s.ToSlice()
 	sort.Ints(sl)
-	fmt.Println(sl)
+	return sl
 }

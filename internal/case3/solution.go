@@ -10,7 +10,7 @@ import (
 	"sync"
 )
 
-func Solution(entries []os.DirEntry) {
+func Solution(entries []os.DirEntry) []int {
 	filesChan := make(chan string, len(entries))
 	resultMap := make(map[int]struct{})
 	var mutex sync.Mutex
@@ -73,5 +73,5 @@ func Solution(entries []os.DirEntry) {
 		result = append(result, num)
 	}
 	sort.Ints(result)
-	fmt.Println(result)
+	return result
 }

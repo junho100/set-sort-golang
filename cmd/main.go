@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"set-sort-golang/internal"
@@ -15,5 +16,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	case2.Solution(entries)
+	answer := case2.Solution(entries)
+	fmt.Println(answer)
 }
