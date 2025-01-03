@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 	"set-sort-golang/internal"
-	"set-sort-golang/internal/case1"
+	"set-sort-golang/internal/case2"
 )
 
 func main() {
@@ -15,5 +15,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	case1.Solution(entries)
+	case2.Solution(entries)
 }
