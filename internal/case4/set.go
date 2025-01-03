@@ -23,7 +23,7 @@ func (s *Set) Add(element int) {
 
 func (s *Set) AddAll(elements []int) {
 	s.m.Lock()
-	for element := range elements {
+	for _, element := range elements {
 		s.data[element] = struct{}{}
 	}
 	s.m.Unlock()
