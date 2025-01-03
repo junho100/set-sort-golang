@@ -9,6 +9,7 @@ import (
 	"set-sort-golang/internal/case1"
 	"set-sort-golang/internal/case2"
 	"set-sort-golang/internal/case3"
+	"set-sort-golang/internal/case4"
 )
 
 func runCase1() []int {
@@ -24,6 +25,11 @@ func runCase2() []int {
 func runCase3() []int {
 	entries, _ := os.ReadDir("./test/")
 	return case3.Solution(entries)
+}
+
+func runCase4() []int {
+	entries, _ := os.ReadDir("./test/")
+	return case4.Solution(entries)
 }
 
 func profileCase(caseNum int, runFunc func() []int) {
@@ -63,4 +69,5 @@ func main() {
 	profileCase(1, runCase1)
 	profileCase(2, runCase2)
 	profileCase(3, runCase3)
+	profileCase(4, runCase4)
 }

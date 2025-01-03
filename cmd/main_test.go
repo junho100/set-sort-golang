@@ -6,6 +6,7 @@ import (
 	"set-sort-golang/internal/case1"
 	"set-sort-golang/internal/case2"
 	"set-sort-golang/internal/case3"
+	"set-sort-golang/internal/case4"
 	"testing"
 )
 
@@ -36,5 +37,13 @@ func BenchmarkCase3(b *testing.B) {
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
 		case3.Solution(entries)
+	}
+}
+
+func BenchmarkCase4(b *testing.B) {
+	entries := setupTestData()
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		case4.Solution(entries)
 	}
 }
