@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"runtime/pprof"
+	"runtime/trace"
 	"set-sort-golang/internal"
 	"set-sort-golang/internal/case1"
 	"set-sort-golang/internal/case2"
@@ -33,6 +34,18 @@ func runCase4() []int {
 }
 
 func profileCase(caseNum int, runFunc func() []int) {
+	// 트레이스 파일 생성
+	f, err := os.Create(fmt.Sprintf("traces/trace_case%d.out", caseNum))
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	// 트레이스 시작
+	if err := trace.Start(f); err != nil {
+		log.Fatal(err)
+	}
+	defer trace.Stop() // trace.Stop() 호출 보장
 	// CPU 프로파일
 	cpuFile, err := os.Create(fmt.Sprintf("profiles/cpu_case%d.prof", caseNum))
 	if err != nil {
